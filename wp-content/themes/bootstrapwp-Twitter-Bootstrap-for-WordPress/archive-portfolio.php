@@ -14,7 +14,7 @@
 
 get_header();
 if (have_posts() ) ;?>
-<div class="row">
+<div>
 	<div class="container">
 		<?php if (function_exists('bootstrapwp_breadcrumbs')) bootstrapwp_breadcrumbs(); ?>
 	</div><!--/.container -->
@@ -46,30 +46,50 @@ if (have_posts() ) ;?>
 		?> 
 	
 	</h1>
-	<h2> NEW CONTENT</h2>
+	<h2>Portfolio Content</h2>
 </header>
 
-<div class="row content">
-	<div class="span8">
+<div class="content">
+	<header class="portfolio-filters">
+		<ul class="load-portfolio">
+			<li class="active"><a href="#" class="all">All</a></li>
+			<?php
+        $args = array( 'taxonomy' => 'portfolio-type' );
+        $terms = get_terms('portfolio-type', $args);
+        $count = count($terms); $i=0;
+        if ($count > 0) {
+            $cape_list = '';
+            foreach ($terms as $term) {
+                $i++;
+                $term_list .= '<li><a href="#" class="'. $term->slug .'">' . $term->name . '</a></li>';
+                if ($count != $i) $term_list .= ''; else $term_list .= '';
+            }
+            echo $term_list;
+        }
+         ?>
+		</ul>
+	</header>
+
+	<ul class="span12 portfolio-grid">
 		<?php while ( have_posts() ) : the_post(); ?>
-		<div <?php post_class(); ?>>
+		<li data-id="portfolio-<?php echo get_the_ID(); ?>" data-type="<?php 
+			$slugs = get_the_terms( $post->ID, 'portfolio-type' );
+			foreach( $slugs as $slug ) echo '' . $slug->slug. ' ';
+			 ?>" <?php post_class('span3'); ?>>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
 			<p class="meta"><?php echo bootstrapwp_posted_on();?></p>
-			<div class="row">
-				        <div class="span2">
-				        	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-          					<?php echo bootstrapwp_autoset_featured_img(); ?></a>
-				        </div><!-- /.span2 -->
-				        <div class="span6">
-				        	<?php the_excerpt();?>
-				        </div><!-- /.span6 -->
-				    </div><!-- /.row -->
-				    <hr />
-				</div><!-- /.post_class -->
-			<?php endwhile; ?>
+			<div class="">
+			        <div class="">
+			        	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php echo bootstrapwp_autoset_featured_img(); ?></a>
+			        </div><!-- /.span2 -->
+			        <div class="">
+			        	<?php the_excerpt();?>
+			        </div><!-- /.span6 -->
+			</div><!-- /.row -->
+		</li><!-- /.post_class -->
+		<?php endwhile; ?>
 			<?php bootstrapwp_content_nav('nav-below');?>
 
-		</div><!-- /.span8 -->
-		<?php get_sidebar('blog'); ?>
+	</ul><!-- /.span12 -->
 
 		<?php get_footer(); ?>
