@@ -46,24 +46,7 @@ get_header(); ?>
 
 
 <div class="container">
-  <div class="marketing">
-  <div class="row-fluid">
-    <div class="span4">
-      <?php
-if ( function_exists( 'dynamic_sidebar' ) ) dynamic_sidebar( "home-left" );
-?>
-    </div>
-    <div class="span4">
-      <?php
-if ( function_exists( 'dynamic_sidebar' ) ) dynamic_sidebar( "home-middle" );
-?>
-    </div>
-    <div class="span4">
-      <?php
-if ( function_exists( 'dynamic_sidebar' ) ) dynamic_sidebar( "home-right" );
-?>
-    </div>
-  </div>
-</div><!-- /.marketing -->
+<?php get_sidebar('recentclients'); ?>
+ 	
 </div>
 <?php get_footer();?>

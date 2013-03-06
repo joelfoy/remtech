@@ -150,7 +150,7 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "AsapRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -492,6 +492,55 @@ a:hover {
 .container-fluid:after {
   clear: both;
 }
+@font-face {
+  font-family: 'oswaldbold';
+  src: url('font/oswald-bold-webfont.eot');
+  src: url('font/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'), url('font/oswald-bold-webfont.woff') format('woff'), url('font/oswald-bold-webfont.ttf') format('truetype'), url('font/oswald-bold-webfont.svg#oswaldbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'oswaldlight';
+  src: url('font/oswald-light-webfont.eot');
+  src: url('font/oswald-light-webfont.eot?#iefix') format('embedded-opentype'), url('font/oswald-light-webfont.woff') format('woff'), url('font/oswald-light-webfont.ttf') format('truetype'), url('font/oswald-light-webfont.svg#oswaldlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'oswaldbook';
+  src: url('font/oswald-regular-webfont.eot');
+  src: url('font/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'), url('font/oswald-regular-webfont.woff') format('woff'), url('font/oswald-regular-webfont.ttf') format('truetype'), url('font/oswald-regular-webfont.svg#oswaldbook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AsapRegular';
+  src: url('font/Asap-Regular-webfont.eot');
+  src: url('font/Asap-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('font/Asap-Regular-webfont.woff') format('woff'), url('font/Asap-Regular-webfont.ttf') format('truetype'), url('font/Asap-Regular-webfont.svg#AsapRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AsapItalic';
+  src: url('font/Asap-Italic-webfont.eot');
+  src: url('font/Asap-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('font/Asap-Italic-webfont.woff') format('woff'), url('font/Asap-Italic-webfont.ttf') format('truetype'), url('font/Asap-Italic-webfont.svg#AsapItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AsapBold';
+  src: url('font/Asap-Bold-webfont.eot');
+  src: url('font/Asap-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('font/Asap-Bold-webfont.woff') format('woff'), url('font/Asap-Bold-webfont.ttf') format('truetype'), url('font/Asap-Bold-webfont.svg#AsapBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AsapBoldItalic';
+  src: url('font/Asap-BoldItalic-webfont.eot');
+  src: url('font/Asap-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('font/Asap-BoldItalic-webfont.woff') format('woff'), url('font/Asap-BoldItalic-webfont.ttf') format('truetype'), url('font/Asap-BoldItalic-webfont.svg#AsapBoldItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 p {
   margin: 0 0 10px;
 }
@@ -535,10 +584,10 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: inherit;
-  font-weight: bold;
+  font-family: "oswaldbold";
+  font-weight: normal;
   line-height: 1;
-  color: inherit;
+  color: #289928;
   text-rendering: optimizelegibility;
 }
 h1 small,
@@ -792,7 +841,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "AsapRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 label {
   display: block;
@@ -3482,6 +3531,37 @@ input[type="button"].btn-block {
 .btn-inverse.active {
   background-color: #080808 \9;
 }
+.btn-green {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #2eb72e;
+  background-image: -moz-linear-gradient(top, #31c531, #29a229);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#31c531), to(#29a229));
+  background-image: -webkit-linear-gradient(top, #31c531, #29a229);
+  background-image: -o-linear-gradient(top, #31c531, #29a229);
+  background-image: linear-gradient(to bottom, #31c531, #29a229);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff31c531', endColorstr='#ff29a229', GradientType=0);
+  border-color: #29a229 #29a229 #1a651a;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #29a229;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-green:hover,
+.btn-green:active,
+.btn-green.active,
+.btn-green.disabled,
+.btn-green[disabled] {
+  color: #ffffff;
+  background-color: #29a229;
+  *background-color: #248e24;
+}
+.btn-green:active,
+.btn-green.active {
+  background-color: #1f791f \9;
+}
 button.btn,
 input[type="submit"].btn {
   *padding-top: 3px;
@@ -4244,7 +4324,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   margin-bottom: 0;
   padding: 4px 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "AsapRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -5515,6 +5595,19 @@ a.badge:hover {
 .carousel-caption p {
   margin-bottom: 0;
 }
+/* HERO ---------------------------------- */
+#hero .item {
+  height: 550px;
+}
+#football {
+  background: #eeeeee url(../img/home-hero/football-plan.jpg) top center no-repeat;
+}
+#broadcast {
+  background: #eeeeee url(../img/home-hero/broadcast.jpg) top center no-repeat;
+}
+#first-class {
+  background: #eeeeee url(../img/home-hero/first-class.jpg) top center no-repeat;
+}
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
@@ -6783,6 +6876,11 @@ hr.soften {
 }
 /* Footer
 -------------------------------------------------- */
+footer {
+  background: #333333 url('../img/foot-background.png');
+  border-top: 1px solid white;
+  color: white;
+}
 .footer {
   padding: 70px 0;
   margin-top: 70px;
@@ -6799,6 +6897,12 @@ hr.soften {
 .footer-links li {
   display: inline;
   margin-right: 10px;
+}
+.foot-center {
+  padding-left: 100px;
+}
+.copyright {
+  font-family: "AsapBold";
 }
 /* Special grid styles
 -------------------------------------------------- */
@@ -7769,8 +7873,8 @@ img.aligncenter {
   margin-bottom: 9px;
 }
 /* 
- * HOME PAGE
- *
+ * GLOBAL NAVIGATION
+ * 
  */
 /* Header and Hero
 ----------------------------------------------------------------------------------------*/
@@ -7780,19 +7884,10 @@ img.aligncenter {
   background: transparent url(../img/remtech-logo.png) no-repeat;
   position: relative;
 }
-/* HERO ---------------------------------- */
-#hero .item {
-  height: 550px;
-}
-#football {
-  background: #0000ff url(../img/home-hero/football-plan.jpg) top center no-repeat;
-}
-#broadcast {
-  background: #008000 url(../img/home-hero/broadcast.jpg) top center no-repeat;
-}
-#first-class {
-  background: #ffff00 url(../img/home-hero/first-class.jpg) top center no-repeat;
-}
+/*
+ * HOME PAGE
+ *
+ */
 /* Hero Bar ------------------------------ */
 .hero-bar {
   background-color: #ddd;
@@ -7815,6 +7910,7 @@ img.aligncenter {
   position: relative;
   left: 50%;
   margin-left: -220px;
+  width: 410px;
 }
 .hero-bar.home .hero-actions li {
   float: left;

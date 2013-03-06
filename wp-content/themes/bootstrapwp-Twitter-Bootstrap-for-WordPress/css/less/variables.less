@@ -44,18 +44,20 @@
 
 // Typography
 // -------------------------
-@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@sansFontFamily:        "AsapRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@italicFontFamily:		"AsapItalic";
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @baseFontSize:          14px;
 @baseFontFamily:        @sansFontFamily;
+@baseBoldFontFamily:	"AsapBold";
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:    bold;    // instead of browser default, bold
-@headingsColor:         inherit; // empty to use BS default, @textColor
+@headingsFontFamily:    "oswaldbold"; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    normal;    // instead of browser default, bold
+@headingsColor:         #289928; // empty to use BS default, @textColor
 
 // Tables
 // -------------------------
@@ -87,6 +89,9 @@
 
 @btnInverseBackground:              #444;
 @btnInverseBackgroundHighlight:     @grayDarker;
+
+@btnGreen:							#29a229;
+@btnGreenHighlight:					#31c531;
 
 
 // Forms

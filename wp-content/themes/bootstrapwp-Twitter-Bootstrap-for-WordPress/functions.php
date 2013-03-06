@@ -114,9 +114,9 @@ function bootstrapwp_widgets_init() {
   ) );
 
   register_sidebar(array(
-    'name' => 'Home Left',
-    'id'   => 'home-left',
-    'description'   => 'Left textbox on homepage',
+    'name' => 'Footer Left',
+    'id'   => 'footer-left',
+    'description'   => 'Left textbox in footer',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
@@ -124,9 +124,9 @@ function bootstrapwp_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Home Middle',
-    'id'   => 'home-middle',
-    'description'   => 'Middle textbox on homepage',
+    'name' => 'Footer Middle',
+    'id'   => 'footer-middle',
+    'description'   => 'Middle textbox in footer',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2>',
@@ -134,8 +134,8 @@ function bootstrapwp_widgets_init() {
   ));
 
     register_sidebar(array(
-    'name' => 'Home Right',
-    'id'   => 'home-right',
+    'name' => 'Footer Right',
+    'id'   => 'footer-right',
     'description'   => 'Right textbox on homepage',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
@@ -163,12 +163,12 @@ add_action( 'init', 'bootstrapwp_widgets_init' );
 | */
 if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'post-thumbnails' );
-  set_post_thumbnail_size( 160, 120 ); // 160 pixels wide by 120 pixels high
+  set_post_thumbnail_size( 265, 200 ); // 160 pixels wide by 120 pixels high
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-  add_image_size( 'bootstrap-small', 260, 180 ); // 260 pixels wide by 180 pixels high
-  add_image_size( 'bootstrap-medium', 360, 268 ); // 360 pixels wide by 268 pixels high
+  add_image_size( 'hero-banner', 2000, 550 ); // 260 pixels wide by 180 pixels high
+  add_image_size( 'medium', 320, 260, true ); // 360 pixels wide by 268 pixels high
 }
 /*
 | -------------------------------------------------------------------

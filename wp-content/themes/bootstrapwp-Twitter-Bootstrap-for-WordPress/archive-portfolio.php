@@ -20,7 +20,7 @@ if (have_posts() ) ;?>
 	</div><!--/.container -->
 </div><!--/.row -->
 <div class="container">
-	<header class="jumbotron subhead" id="overview">
+	<header class="subhead" id="overview">
 		<h1><?php
 		if ( is_day() ) {
 			printf( __( 'Daily Archives: %s', 'bootstrapwp' ), '<span>' . get_the_date() . '</span>' );
@@ -70,7 +70,7 @@ if (have_posts() ) ;?>
 		</ul>
 	</header>
 
-	<ul class="span12 portfolio-grid">
+	<ul class="row portfolio-grid">
 		<?php while ( have_posts() ) : the_post(); ?>
 		<li data-id="portfolio-<?php echo get_the_ID(); ?>" data-type="<?php 
 			$slugs = get_the_terms( $post->ID, 'portfolio-type' );
@@ -91,5 +91,6 @@ if (have_posts() ) ;?>
 			<?php bootstrapwp_content_nav('nav-below');?>
 
 	</ul><!-- /.span12 -->
-
+	</div><!-- /.content -->
+</div><!-- /.container -->
 		<?php get_footer(); ?>
