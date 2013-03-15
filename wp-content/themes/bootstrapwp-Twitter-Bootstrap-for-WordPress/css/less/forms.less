@@ -49,6 +49,7 @@ button,
 select,
 textarea {
   font-family: @baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+  margin-bottom: 10px;
 }
 
 // Identify controls by their labels
@@ -57,6 +58,9 @@ label {
   margin-bottom: 5px;
 }
 
+.required	{
+	color: @red;
+}
 // Form controls
 // -------------------------
 
@@ -84,7 +88,7 @@ input[type="color"],
   margin-bottom: 9px;
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
-  color: @gray;
+  color: @white;
   .border-radius(@inputBorderRadius);
 }
 
@@ -362,9 +366,9 @@ textarea:focus:required:invalid,
 select:focus:required:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
+  outline-color: @red;
   &:focus {
-    border-color: darken(#ee5f5b, 10%);
-    .box-shadow(0 0 6px lighten(#ee5f5b, 20%));
+    border-color: @red;
   }
 }
 

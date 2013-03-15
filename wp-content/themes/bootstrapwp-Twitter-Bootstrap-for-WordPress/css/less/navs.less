@@ -15,6 +15,7 @@
 // Make links block level
 .nav > li > a {
   display: block;
+  font-family: 'oswaldbold';
 }
 .nav > li > a:hover {
   text-decoration: none;
@@ -119,7 +120,7 @@
     border-color: @grayLighter @grayLighter #ddd;
   }
 }
-// Active state, and it's :hover to override normal :hover
+// Active state, and its :hover to override normal :hover
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover {
   color: @gray;
@@ -129,6 +130,16 @@
   cursor: default;
 }
 
+// MAIN MENU
+// ---------
+#main-menu			{	margin-top: 13px;
+						float: right;
+					}
+#main-menu li		{}
+#main-menu li a		{	font-size: 22px;
+						color: white;
+						font-family: 'oswaldbook';
+					}		
 
 // PILLS
 // -----

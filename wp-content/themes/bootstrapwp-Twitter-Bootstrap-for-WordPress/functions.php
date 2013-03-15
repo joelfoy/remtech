@@ -161,14 +161,41 @@ add_action( 'init', 'bootstrapwp_widgets_init' );
 | Adding Post Thumbnails and Image Sizes
 | -------------------------------------------------------------------
 | */
+$args1 = array(
+            'id' => 'branding',
+            'post_type' => 'portfolio',      // Set this to post or page
+            'labels' => array(
+                'name'      => 'Branding Image',
+                'set'       => 'Set featured image 2',
+                'remove'    => 'Remove Branding Image',
+                'use'       => 'Use as featured image 2',
+            )
+    );
+
+    $args2 = array(
+            'id' => 'preview-image',
+            'post_type' => 'portfolio',      // Set this to post or page
+            'labels' => array(
+                'name'      => 'Preview Image',
+                'set'       => 'Set featured image 3',
+                'remove'    => 'Remove Preview Image 3',
+                'use'       => 'Use as featured image 3',
+            )
+    );
+
+new kdMultipleFeaturedImages( $args1 );
+new kdMultipleFeaturedImages( $args2 );
+
 if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'post-thumbnails' );
   set_post_thumbnail_size( 265, 200 ); // 160 pixels wide by 120 pixels high
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-  add_image_size( 'hero-banner', 2000, 550 ); // 260 pixels wide by 180 pixels high
+  add_image_size( 'hero-banner', 2000, 550); // 2000 pixels wide by 550 pixels high
   add_image_size( 'medium', 320, 260, true ); // 360 pixels wide by 268 pixels high
+  add_image_size( 'preview-image', 270, 180);
+  add_image_size( 'branding-image', 370, 120);
 }
 /*
 | -------------------------------------------------------------------

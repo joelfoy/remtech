@@ -14,45 +14,15 @@
 
 get_header();
 if (have_posts() ) ;?>
-<div>
-	<div class="container">
-		<?php if (function_exists('bootstrapwp_breadcrumbs')) bootstrapwp_breadcrumbs(); ?>
-	</div><!--/.container -->
-</div><!--/.row -->
-<div class="container">
-	<header class="subhead" id="overview">
-		<h1><?php
-		if ( is_day() ) {
-			printf( __( 'Daily Archives: %s', 'bootstrapwp' ), '<span>' . get_the_date() . '</span>' );
-		} elseif ( is_month() ) {
-			printf( __( 'Monthly Archives: %s', 'bootstrapwp' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'bootstrapwp' ) ) . '</span>' );
-		} elseif ( is_year() ) {
-			printf( __( 'Yearly Archives: %s', 'bootstrapwp' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'bootstrapwp' ) ) . '</span>' );
-		} elseif ( is_tag() ) {
-			printf( __( 'Tag Archives: %s', 'bootstrapwp' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-					// Show an optional tag description
-			$tag_description = tag_description();
-			if ( $tag_description )
-				echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
-		} elseif ( is_category() ) {
-			printf( __( 'Category Archives: %s', 'bootstrapwp' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-					// Show an optional category description
-			$category_description = category_description();
-			if ( $category_description )
-				echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-		} else {
-			_e( 'Blog Archives', 'bootstrapwp' );
-		}
-		?> 
-	
-	</h1>
-	<h2>Portfolio Content</h2>
-</header>
+<div class="container head-space">
+	<header class="subhead portfolio-header" id="overview">
+		<h1>Our Work</h1>
+	</header>	
 
 <div class="content">
 	<header class="portfolio-filters">
-		<ul class="load-portfolio">
-			<li class="active"><a href="#" class="all">All</a></li>
+		<ul class="load-portfolio clearfix">
+			<li class="active-filter"><a href="#" class="all">All</a></li>
 			<?php
         $args = array( 'taxonomy' => 'portfolio-type' );
         $terms = get_terms('portfolio-type', $args);
@@ -76,16 +46,11 @@ if (have_posts() ) ;?>
 			$slugs = get_the_terms( $post->ID, 'portfolio-type' );
 			foreach( $slugs as $slug ) echo '' . $slug->slug. ' ';
 			 ?>" <?php post_class('span3'); ?>>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
-			<p class="meta"><?php echo bootstrapwp_posted_on();?></p>
-			<div class="">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3>
 			        <div class="">
-			        	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php echo bootstrapwp_autoset_featured_img(); ?></a>
+			        	<?php kd_mfi_the_featured_image( 'branding', 'portfolio', 'branding-image', $post->ID ); ?>
 			        </div><!-- /.span2 -->
-			        <div class="">
-			        	<?php the_excerpt();?>
-			        </div><!-- /.span6 -->
-			</div><!-- /.row -->
+			</a>
 		</li><!-- /.post_class -->
 		<?php endwhile; ?>
 			<?php bootstrapwp_content_nav('nav-below');?>

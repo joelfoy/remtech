@@ -28,10 +28,11 @@
 // ------------------
 .tab-focus() {
   // Default
-  outline: thin dotted #333;
+  //outline: thin dotted #333;
   // Webkit
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: none !important;
+  outline-color: transparent !important;
+  //outline-offset: -2px;
 }
 
 // Center-align a block level element
@@ -268,6 +269,13 @@
      -moz-transition-delay: @transition-delay;
        -o-transition-delay: @transition-delay;
           transition-delay: @transition-delay;
+}
+.transition-duration(@time)	{
+  -webkit-transition-duration: @time;
+     -moz-transition-duration: @time;
+       -o-transition-duration: @time;
+          transition-duration: @time;
+
 }
 
 // Transformations

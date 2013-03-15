@@ -16,7 +16,7 @@ get_header(); ?>
   
     <!-- Masthead
       ================================================== -->
-      <header class="jumbotron subhead" id="overview">
+      <header class="subhead" id="overview">
         <h1><?php printf( __( 'Search Results for: %s', 'bootstrapwp' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
        
       </header>
@@ -31,7 +31,7 @@ get_header(); ?>
 			<?php else : ?>
  <!-- Masthead
       ================================================== -->
-      <header class="jumbotron subhead" id="overview">
+      <header class="subhead" id="overview">
         <h1><?php _e( 'No Results Found', 'bootstrapwp' ); ?></h1>
       <p class="lead"><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps you should try again with a different search term.', 'bootstrapwp' ); ?></p>
       </header>

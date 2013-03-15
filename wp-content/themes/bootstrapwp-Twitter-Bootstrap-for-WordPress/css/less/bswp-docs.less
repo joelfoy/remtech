@@ -282,6 +282,9 @@ footer	{	background: #333 url('../img/foot-background.png');
 			border-top: 1px solid white;	
 			color: white;
 		}
+.page-footer	{	padding-bottom: 40px;
+					margin-top: 40px;
+				}
 .footer {
   padding: 70px 0;
   margin-top: 70px;
@@ -311,7 +314,34 @@ footer	{	background: #333 url('../img/foot-background.png');
 .foot-right		{}
 
 .copyright	{	font-family: @baseBoldFontFamily;	}
+.call-us	{	color: @green !important;
+				font-family: @baseBoldFontFamily;
+				font-size: 20px;
+				background-color: white;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+				padding: 8px 10px 4px 5px;
+				width: 198px;
+				position: relative;
+			}
+.call-us:before	{
+	border-width: 0 20px 0 0;
+	border-style: solid;
+	position: absolute;
+	right: -100px;
+	border-color: white;
+	content: "";
+	width: 10px;
+}
 
+.foot-form	{	width: 210px;
+				margin-bottom: 20px;
+			}
+#send-button:before	{	content: "";
+						width: 5px;
+						height: 5px;
+						display: block;
+						border: 2px solid white;
+					}
 /* Special grid styles
 -------------------------------------------------- */
 

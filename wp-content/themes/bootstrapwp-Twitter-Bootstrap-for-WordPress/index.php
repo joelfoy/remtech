@@ -42,5 +42,7 @@ get_header(); ?>
  <?php bootstrapwp_content_nav('nav-below');?>
 
 </div><!-- /.span8 -->
+</div>
+
 <?php get_sidebar('blog'); ?>
 <?php get_footer(); ?>

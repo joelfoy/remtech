@@ -52,26 +52,6 @@
   </head>
   <body <?php body_class(); ?>  data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="10">
   
-  <?php if (is_page('home')) { ?>
-  <!-- Hero Carousel -->
-  <div id="hero" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#hero" data-slide-to="0" class="active"></li>
-    <li data-target="#hero" data-slide-to="1"></li>
-    <li data-target="#hero" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div id="football" class="active item"></div>
-    <div id="broadcast" class="item"></div>
-    <div id="first-class" class="item"></div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#hero" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#hero" data-slide="next">&rsaquo;</a>
-</div>
-  <!-- end Hero Carousel -->
-  <?php } ?>
     <div class="navbar navbar-inverse navbar-relative-top">
            <div class="navbar-inner">
              <div class="container">

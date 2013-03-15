@@ -10,7 +10,8 @@
  */
 ?>
     <!-- End Template Content -->
-	<footer>
+	<footer class="page-footer">
+	<?php if(is_page('home')) { get_sidebar('recentclients'); } ?>
 		<div class="container">
 			<div class="row">
 				<div class="footer-block foot-left span4" id="foot-remtech-about">
@@ -35,15 +36,15 @@
 	      		
 	      		<div class="footer-block foot-right span4" id="foot-contact">
 	      			<h3>Get in Touch</h3>
-	      			<p><strong>Call:</strong> 555-555-5555</p>
+	      			
 	      			<form method="post" class="foot-form" id="quick-contact" action="">
 	      				<label class="form-label label" for="name">Name<span class="required">*</span></label>
 	      				<input name="name" id="name" class="form-input" required="required" placeholder="John Smith"/>
 	      				<label class="form-label label" for="email">Email<span class="required">*</span></label>
 	      				<input name="email" id="email" class="form-input" required="required" placeholder="john@domain.com"/>
-	      				<label class="form-label label" for="name">Name<span class="required">*</span></label>
+	      				<label class="form-label label" for="name">Message<span class="required">*</span></label>
 	      				<textarea class="form-input" rows="5" name="message" id="message"></textarea>
-	      				<input type="submit" value="Send Message" class="btn btn-green" />
+	      				<input id="send-button" type="submit" value="Send Message" class="btn btn-green send-button" />
 	      				
 	      			
 	      			</form>

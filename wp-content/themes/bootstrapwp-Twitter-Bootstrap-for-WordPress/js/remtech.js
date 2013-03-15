@@ -82,12 +82,12 @@
 	    // item is clicked
 	    $('.load-portfolio li a').click(function(e) {
 	        // reset the active class on all the buttons
-	        $('.load-portfolio li').removeClass('active');
+	        $('.load-portfolio li').removeClass('active-filter');
 	 
 	        // assign the class of the clicked filter option
 	        // element to our $filterType variable
 	        var $filterType = $(this).attr('class');
-	        $(this).parent().addClass('active');
+	        $(this).parent().addClass('active-filter');
 	 
 	        if ($filterType == 'all') {
 	            // assign all li items to the $filteredData var when

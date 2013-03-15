@@ -8,13 +8,15 @@
  */
 ?>
 
-<div class="recent-clients">
-	<h3 class="section-header">Recent Clients</h3>
-	<ul class="client-list">
-		<li class="client" id="client-harris"></li>
-		<li class="client" id="client-hogan"></li>
-		<li class="client" id="client-beautyspot"></li>
-		<li class="client" id="client-ahd"></li>
-	</ul>
-</div><!-- /.recent-clients -->
 
+<div class="recent-clients">
+	<div class="container">
+		<h3 class="section-header">Recent Clients</h3>
+		<ul class="client-list row">
+			<li class="client" id="client-harris"></li>
+			<li class="client" id="client-hogan"></li>
+			<li class="client" id="client-beautyspot"></li>
+			<li class="client" id="client-clevel"></li>
+		</ul>
+	</div>
+</div><!-- /.recent-clients -->

@@ -4,9 +4,12 @@
 
 
 .pager {
-  margin: @baseLineHeight 0;
   list-style: none;
-  text-align: center;
+  text-align: right;
+  width: 400px;
+  position: absolute;
+  right: 0;
+  top: 20px;
   .clearfix();
 }
 .pager li {
@@ -26,11 +29,11 @@
 }
 .pager .next > a,
 .pager .next > span {
-  float: right;
+  /*float: right;*/
 }
 .pager .previous > a,
 .pager .previous > span {
-  float: left;
+  /*float: left;*/
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
