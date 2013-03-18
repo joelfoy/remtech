@@ -37,7 +37,7 @@ get_header(); ?>
     <div class="container">
 		<ul class="hero-actions">
 			<li><a class="hero-action" id="hero-contact">Contact Remtech</a></li>
-			<li><a class="hero-action" id="hero-work">See Our Work</a></li>
+			<li><a href="services" class="hero-action" id="hero-work">See Our Work</a></li>
 		</ul> 
     </div>
 </section>
