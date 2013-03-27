@@ -568,7 +568,7 @@ cite {
   color: #c09853;
 }
 .text-error {
-  color: #b94a48;
+  color: #dc291e;
 }
 .text-info {
   color: #3a87ad;
@@ -843,12 +843,42 @@ textarea {
   font-family: "AsapRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 10px;
 }
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  -moz-appearance: none;
+}
 label {
   display: block;
   margin-bottom: 5px;
 }
 .required {
-  color: #9d261d;
+  color: #dc291e;
+}
+.error {
+  border-color: #dc291e !important;
+}
+.error-message {
+  color: #dc291e;
+}
+#primary-contact .alert-error {
+  margin-left: 15px;
+  padding: 4px 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#primary-contact .alert-success {
+  margin-left: 15px;
+  padding: 4px 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#primary-contact .icon-spinner {
+  margin-left: 15px;
 }
 select,
 textarea,
@@ -873,7 +903,7 @@ input[type="color"],
   margin-bottom: 9px;
   font-size: 14px;
   line-height: 20px;
-  color: #ffffff;
+  color: #555555;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -904,9 +934,6 @@ input[type="color"],
 .uneditable-input {
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border linear .2s, box-shadow linear .2s;
   -moz-transition: border linear .2s, box-shadow linear .2s;
   -o-transition: border linear .2s, box-shadow linear .2s;
@@ -928,14 +955,13 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(40, 153, 40, 0.5);
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
 
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  /*.box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));*/
+
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -966,7 +992,7 @@ input[type="file"] {
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
 
-  line-height: 30px;
+  line-height: 23px;
 }
 select {
   width: 220px;
@@ -1173,6 +1199,8 @@ input[type="checkbox"][readonly] {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 .control-group.warning input:focus,
 .control-group.warning select:focus,
@@ -1191,36 +1219,38 @@ input[type="checkbox"][readonly] {
 .control-group.error > label,
 .control-group.error .help-block,
 .control-group.error .help-inline {
-  color: #b94a48;
+  color: #dc291e;
 }
 .control-group.error .checkbox,
 .control-group.error .radio,
 .control-group.error input,
 .control-group.error select,
 .control-group.error textarea {
-  color: #b94a48;
+  color: #dc291e;
 }
 .control-group.error input,
 .control-group.error select,
 .control-group.error textarea {
-  border-color: #b94a48;
+  border-color: #dc291e;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 .control-group.error input:focus,
 .control-group.error select:focus,
 .control-group.error textarea:focus {
-  border-color: #953b39;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+  border-color: #af2118;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ec7b74;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ec7b74;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ec7b74;
 }
 .control-group.error .input-prepend .add-on,
 .control-group.error .input-append .add-on {
-  color: #b94a48;
+  color: #dc291e;
   background-color: #f2dede;
-  border-color: #b94a48;
+  border-color: #dc291e;
 }
 .control-group.success > label,
 .control-group.success .help-block,
@@ -1241,6 +1271,8 @@ input[type="checkbox"][readonly] {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 .control-group.success input:focus,
 .control-group.success select:focus,
@@ -1275,6 +1307,8 @@ input[type="checkbox"][readonly] {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 .control-group.info input:focus,
 .control-group.info select:focus,
@@ -1295,12 +1329,12 @@ textarea:focus:required:invalid,
 select:focus:required:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
-  outline-color: #9d261d;
+  outline-color: #dc291e;
 }
 input:focus:required:invalid:focus,
 textarea:focus:required:invalid:focus,
 select:focus:required:invalid:focus {
-  border-color: #9d261d;
+  border-color: #dc291e;
 }
 .form-actions {
   padding: 19px 20px 20px;
@@ -1981,6 +2015,7 @@ li [class*=" icon-"],
   display: inline-block;
   width: 1.25em;
   text-align: center;
+  margin-right: 5px;
 }
 li [class^="icon-"].icon-large,
 .nav li [class^="icon-"].icon-large,
@@ -3860,7 +3895,7 @@ input[type="submit"].btn.btn-mini {
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
-  color: #b94a48;
+  color: #dc291e;
 }
 .alert-info {
   background-color: #d9edf7;
@@ -3993,13 +4028,27 @@ input[type="submit"].btn.btn-mini {
   cursor: default;
 }
 #main-menu {
-  margin-top: 13px;
+  margin-top: 4px;
   float: right;
+}
+#main-menu li {
+  margin-left: 40px;
+}
+#main-menu li .sub {
+  font-family: 'oswaldlight';
+  font-size: 15px;
 }
 #main-menu li a {
   font-size: 22px;
   color: white;
   font-family: 'oswaldbook';
+}
+#main-menu li a:hover .sub {
+  color: #289928;
+}
+#main-menu li a:active {
+  position: relative;
+  top: 1px;
 }
 .nav-pills > li > a {
   padding-top: 8px;
@@ -5223,11 +5272,11 @@ a.badge:hover {
 }
 .label-important,
 .badge-important {
-  background-color: #b94a48;
+  background-color: #dc291e;
 }
 .label-important[href],
 .badge-important[href] {
-  background-color: #953b39;
+  background-color: #af2118;
 }
 .label-warning,
 .badge-warning {
@@ -5491,7 +5540,8 @@ a.badge:hover {
 .carousel-inner {
   overflow: hidden;
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 .carousel .item {
   display: none;
@@ -5611,6 +5661,7 @@ a.badge:hover {
 /* HERO ---------------------------------- */
 #hero {
   height: 520px;
+  margin-top: -65px;
 }
 #hero .item {
   height: 550px;
@@ -6954,6 +7005,17 @@ footer {
   display: block;
   border: 2px solid white;
 }
+.featured-frame {
+  width: 270px;
+  border: 2px solid white;
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.8);
+}
+.services-list {
+  list-style-type: none;
+}
+.services-list li i {
+  color: #289928;
+}
 /* Special grid styles
 -------------------------------------------------- */
 .show-grid {
@@ -7521,7 +7583,7 @@ Overriding some defaults from the Bootstrap defaults to improve/fix integration 
 ----------------------------------------------------------------------------------------*/
 .navbar-relative-top {
   margin-bottom: 0;
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 10px;
   z-index: 20;
@@ -7934,6 +7996,41 @@ img.aligncenter {
   padding: 4px 14px;
   position: absolute;
 }
+/* GLOBAL CONTENT STYLES
+----------------------------------------------------------------------------------------*/
+.row ul,
+.content ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+/* GLOBAL CONTACT DRAWER
+----------------------------------------------------------------------------------------*/
+.contact-drawer {
+  display: none;
+}
+.contact-drawer .container {
+  padding-bottom: 10px;
+}
+.contact-items {
+  list-style-type: none;
+}
+.social {
+  list-style-type: none;
+}
+.contact-form {
+  margin-top: 55px;
+}
+.field-container input,
+.field-container select,
+.field-container textarea {
+  width: 100%;
+}
+.field-container #why {
+  background-image: url(../img/glyphicons/glyphicons_420_select-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  width: 105% !important;
+}
 /* Header and Hero
 ----------------------------------------------------------------------------------------*/
 .brand {
@@ -8102,6 +8199,12 @@ img.aligncenter {
  * Portfolio PAGE
  *
  */
+.portfolio-hero {
+  margin-top: -65px;
+}
+.portfolio-hero img {
+  margin-top: -96px;
+}
 .portfolio-header {
   text-align: center;
 }
@@ -8173,4 +8276,5 @@ img.aligncenter {
 .services-hero {
   background: #279d27 url('../img/green-squares-background.jpg');
   height: 100px;
+  margin-top: -65px;
 }

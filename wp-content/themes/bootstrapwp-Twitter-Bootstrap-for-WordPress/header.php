@@ -51,7 +51,11 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>  data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="10">
-  
+  	<!-- Contact Drawer -->
+  	<?php get_sidebar('contactform'); ?>
+    <!-- end Contact Drawer -->
+    
+    <!-- Header/Primary Navigation -->
     <div class="navbar navbar-inverse navbar-relative-top">
            <div class="navbar-inner">
              <div class="container">
@@ -69,7 +73,7 @@
               'menu_class'      => 'nav',
               'fallback_cb'     => '',
               'menu_id' => 'main-menu',
-              'walker' => new Bootstrapwp_Walker_Nav_Menu()
+              'walker' => new Menu_With_Description()
           ) ); ?>
         </div>
       </div>

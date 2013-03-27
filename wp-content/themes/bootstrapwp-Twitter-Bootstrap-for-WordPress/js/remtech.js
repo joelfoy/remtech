@@ -109,5 +109,115 @@
 	    });
 	
  });
+ 
+ // Contact Drawer
+ $('#menu-item-56 a, #hero-contact').on('click', function(e) {
+ 	e.preventDefault();
+ 	$('.contact-drawer').slideToggle();
+ });
+ 
+ // Contact Form
+ $('#contact-submit').on('click', function(e) {
+ 	e.preventDefault();
+ 	
+ 	// Add spinner
+ 	$('#contact-submit').after('<i class="icon-spinner icon-spin"></i>');
+ 	
+ 	$('#primary-contact').delay(3000);
+ 	
+ 	// Remove .error from inputs
+ 	var input = $('.field-container input');
+ 	var select = $('.field-container select');
+ 	var textarea = $('.field-container textarea');
+ 	if (input.hasClass('error')){
+ 		input.removeClass('error');
+ 	}
+ 	if (select.hasClass('error')) {
+ 		select.removeClass('error');
+ 	}
+ 	if (textarea.hasClass('error')) {
+ 		textarea.removeClass('error');
+ 	}
+ 	
+ 	if ($('.alert-error').is(':visible')) {
+ 		$('.alert-error').remove();
+ 	}
+ 	if ($('.alert-success').is(':visible')) {
+ 		$('.alert-success').remove();
+ 	}
+ 	// Variables
+ 	var why = $('#why').val();
+ 		name = $('#name').val();
+ 		email = $('#email').val();
+ 		message = $('#message').val();
+ 		refer = $('#refer').val();
+ 		errors = [];
+ 	
+ 	if (why == 'none') {
+ 		$('#why').addClass('error');
+ 		errors.push('why');
+ 	}		
+ 	if (name == "")	{
+ 		$('#name').addClass('error');
+ 		errors.push('name');
+ 	}
+ 	if (!isValidEmailAddress(email)) {
+ 		$('#email').addClass('error');
+ 		errors.push('email');
+ 	}
+ 	if (message == "") {
+ 		$('#message').addClass('error');
+ 		errors.push('message');
+ 	}
+ 	
+ 	if (errors != 0) {
+ 		removeSpinner();
+ 		mainFormError('Please fill in all fields');
+ 		return false;
+ 	} else {
+ 		// Serialize form
+ 		var data = $('#primary-contact').serialize();
+ 		
+ 		// Process From
+ 		$.ajax({
+ 			type: 'POST',
+ 			url: 'http://localhost:8888/remtech/wp-content/themes/bootstrapwp-Twitter-Bootstrap-for-WordPress/includes/contact-process.php',
+ 			data: data,
+ 			success: function(data) {
+ 				removeSpinner();
+ 				mainFormSuccess('Your message has been sent. Thank you!');
+ 				$('#primary-contact').delay(1400);
+ 				$('#contact-submit').fadeOut();
+ 				input.attr('disabled','disabled');
+ 				select.attr('disabled','disabled');
+ 				textarea.attr('disabled','disabled');
+ 			},
+ 			error: function(data) {
+ 				removeSpinner();
+ 				mainFormError('There was a problem sending your form, try back later!');		 			}
+ 		});
+ 		
+ 		return false;
+ 	}
+ 		
+ }); // end #contact-form submit
+
+// Validate email Function
+function isValidEmailAddress(emailAddress) {
+var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+return pattern.test(emailAddress);
+}
+
+function mainFormError(text) {
+	$('#contact-submit').after('<span class="alert-error">'+ text +'</span>');
+}
+
+function mainFormSuccess(text) {
+	$('#contact-submit').after('<span class="alert-success">'+ text +'</span>');
+}
+
+function removeSpinner() {
+	$('.icon-spinner').remove();
+}
 
 }(window.jQuery);

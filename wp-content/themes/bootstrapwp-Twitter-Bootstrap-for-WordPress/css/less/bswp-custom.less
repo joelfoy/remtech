@@ -11,7 +11,32 @@
 							padding: 4px 14px;
 							position: absolute;
 						}
+/* GLOBAL CONTENT STYLES
+----------------------------------------------------------------------------------------*/
+.row ul, .content ul	{	list-style-type: none;
+							list-style-position: inside;
+						}
 
+/* GLOBAL CONTACT DRAWER
+----------------------------------------------------------------------------------------*/
+.contact-drawer	{	display: none;	}
+.contact-drawer .container	{	padding-bottom: 10px;	}
+.contact-items	{	list-style-type: none;	}
+.social	{	list-style-type: none;	}
+.contact-form	{	margin-top: 55px;	}
+.contact-form .field-container	{}
+.field-container input, 
+.field-container select, 
+.field-container textarea	{
+	width: 100%;
+}
+.field-container #why	{	background-image: url(../img/glyphicons/glyphicons_420_select-arrow.png);	
+							background-repeat: no-repeat;
+							background-position: center right;
+							width: 105% !important;
+						}
+					
+ 
 
 /* Header and Hero
 ----------------------------------------------------------------------------------------*/
@@ -136,7 +161,8 @@
  * Portfolio PAGE
  *
  */
- 
+.portfolio-hero	{	margin-top: -65px;	}
+.portfolio-hero img	{	margin-top: -96px;	}
 .portfolio-header	{	text-align: center;
 					}
 					
@@ -191,4 +217,5 @@
 
 .services-hero	{	background: #279d27 url('../img/green-squares-background.jpg');
 					height: 100px;
+					margin-top: -65px;
 				}

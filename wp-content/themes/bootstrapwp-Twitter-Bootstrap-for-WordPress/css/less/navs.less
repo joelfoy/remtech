@@ -132,15 +132,19 @@
 
 // MAIN MENU
 // ---------
-#main-menu			{	margin-top: 13px;
+#main-menu			{	margin-top: 4px;
 						float: right;
 					}
-#main-menu li		{}
+#main-menu li		{	margin-left: 40px;	}
+#main-menu li .sub	{	font-family:'oswaldlight';
+						font-size: 15px;
+					}
 #main-menu li a		{	font-size: 22px;
 						color: white;
 						font-family: 'oswaldbook';
-					}		
-
+					}	
+#main-menu li a:hover .sub	{	color: @green;	} 	
+#main-menu li a:active 	{	position: relative; top:1px;	}
 // PILLS
 // -----
 

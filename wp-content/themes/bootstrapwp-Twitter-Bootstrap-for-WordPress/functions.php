@@ -172,19 +172,30 @@ $args1 = array(
             )
     );
 
-    $args2 = array(
-            'id' => 'preview-image',
-            'post_type' => 'portfolio',      // Set this to post or page
-            'labels' => array(
-                'name'      => 'Preview Image',
-                'set'       => 'Set featured image 3',
-                'remove'    => 'Remove Preview Image 3',
-                'use'       => 'Use as featured image 3',
-            )
-    );
+$args2 = array(
+        'id' => 'preview-image',
+        'post_type' => 'portfolio',      // Set this to post or page
+        'labels' => array(
+            'name'      => 'Preview Image',
+            'set'       => 'Set featured image 3',
+            'remove'    => 'Remove Preview Image 3',
+            'use'       => 'Use as featured image 3',
+        )
+);
 
+$args3 = array(
+        'id' => 'preview-image',
+        'post_type' => 'page',      // Set this to post or page
+        'labels' => array(
+            'name'      => 'Preview Image',
+            'set'       => 'Set Preview Image',
+            'remove'    => 'Remove Preview Image',
+            'use'       => 'Use as preview image',
+        )
+);
 new kdMultipleFeaturedImages( $args1 );
 new kdMultipleFeaturedImages( $args2 );
+new kdMultipleFeaturedImages( $args3 );
 
 if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'post-thumbnails' );
@@ -222,8 +233,8 @@ function bootstrapwp_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 <ul class="pager">
-		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'bootstrapwp' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'bootstrapwp' ) . '</span>' ); ?>
+		<?php next_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Next post link', 'bootstrapwp' ) . '</span> %title '  ); ?>
+		<?php previous_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Previous post link', 'bootstrapwp' ) . '</span> ' ); ?>
 </ul>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 <ul class="pager">

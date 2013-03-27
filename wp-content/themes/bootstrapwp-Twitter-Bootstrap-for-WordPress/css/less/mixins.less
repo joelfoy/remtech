@@ -182,6 +182,8 @@
   textarea {
     border-color: @borderColor;
     .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    -webkit-appearance: none;
+	-webkit-border-radius: 0px;
     &:focus {
       border-color: darken(@borderColor, 10%);
       .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@borderColor, 20%));
