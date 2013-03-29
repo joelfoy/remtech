@@ -111,9 +111,9 @@
  });
  
  // Contact Drawer
- $('#menu-item-56 a, #hero-contact').on('click', function(e) {
+ $('#menu-item-56 a, #hero-contact, #close-contact').on('click', function(e) {
  	e.preventDefault();
- 	$('.contact-drawer').slideToggle();
+ 	$('.contact-drawer').slideToggle(); 
  });
  
  // Contact Form

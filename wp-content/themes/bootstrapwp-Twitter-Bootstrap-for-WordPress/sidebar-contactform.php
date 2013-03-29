@@ -59,4 +59,5 @@
 
 		</div>
 	</div>
+	<div id="close-contact"><i class="icon-chevron-up icon-white"></i>Close</div>
 </section><!-- /.contact-drawer -->
