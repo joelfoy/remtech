@@ -114,6 +114,7 @@
  $('#menu-item-56 a, #hero-contact, #close-contact').on('click', function(e) {
  	e.preventDefault();
  	$('.contact-drawer').slideToggle(); 
+ 	$('html, body').animate({ scrollTop: 0 }, 600);
  });
  
  // Contact Form
@@ -181,7 +182,7 @@
  		// Process From
  		$.ajax({
  			type: 'POST',
- 			url: 'http://localhost:8888/remtech/wp-content/themes/bootstrapwp-Twitter-Bootstrap-for-WordPress/includes/contact-process.php',
+ 			url: 'http://remtech.us/wp-content/themes/bootstrapwp-Twitter-Bootstrap-for-WordPress/includes/contact-process.php',
  			data: data,
  			success: function(data) {
  				removeSpinner();

@@ -57,8 +57,8 @@ if (isset($_POST['why']))	{
 			$replyMessage .= "<tr>";
 			$replyMessage .= "<td>";
 			$replyMessage .= "<table cellpadding='0' cellspacing='0' width='650'>";
-			$replyMessage .= "<tr style='background-color:#ccc; padding-top:5px;'>";
-			$replyMessage .= "<td style='padding:10px 0 10px 20px' width='100'><img src='http://www.harrisequip.com/wp-content/images/HarrisLogo_small.png'</td>";
+			$replyMessage .= "<tr style='padding-top:5px;'>";
+			$replyMessage .= "<td style='padding:10px 0 10px 20px' width='100'><img src='http://remtech.us/mailer/images/remtech-logo-small.png'</td>";
 			$replyMessage .= "<td style='font-family:sans-serif; font-weight:bold; font-size:22px; color:#444;  padding:5px 0 0 10px;' valign='middle'>Contact Form</td>";
 			$replyMessage .= "</tr></table></td></tr><tr>";
 			$replyMessage .= "<table cellpadding='0' cellspacing='0' width='650' style='font-family:sans-serif;' >";
